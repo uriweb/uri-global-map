@@ -143,7 +143,7 @@ $(document).ready(function () {
   $.ajax({
     type: "GET",
     //YOUR TURN: Replace with csv export link
-    url: 'https://docs.google.com/spreadsheets/d/1wIqM7Yfbpjt_jRiiasNB9uLdFiVAFG-7aw90DmH-odY/gviz/tq?tqx=out:csv&sheet=Sheet1',
+    url: 'https://docs.google.com/spreadsheets/d/' .$attributes["attributes"]. '/gviz/tq?tqx=out:csv&sheet=Sheet1',
     dataType: "text",
     success: function (csvData) { makeGeoJSON(csvData); }
   });
