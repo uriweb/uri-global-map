@@ -16,5 +16,5 @@ Displays a world map using Mapbox and Google Sheets
 Contributors: Alexandra Gauss 
 Tags: plugins  
 Requires at least: 4.0  
-Tested up to: 4.9  
+Tested up to: 6.1.1  
 Stable tag: 0.1.0  
