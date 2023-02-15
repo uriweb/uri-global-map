@@ -18,7 +18,7 @@ var transformRequest = (url, resourceType) => {
 };
 //YOUR TURN: add your Mapbox token
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWdhdXNzIiwiYSI6ImNsY2h5dW9jMjAxM3czcnA4NjhhN3VteGQifQ.tm85m6IfIw5xsHEB0wqmgQ'; //Mapbox token 
+mapboxgl.accessToken = ''. $attributes["token"] .''; //Mapbox token 
 var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/mapbox/satellite-v9', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles

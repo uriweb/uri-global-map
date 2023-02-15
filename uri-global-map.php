@@ -40,6 +40,7 @@ function uri_global_map_shortcode( $attributes) {
     // default attributes
     $attributes = shortcode_atts( array(
         'spreadsheet' => '',
+        'token' => '',
         'width' => '',
         'height' => '',
     ), $attributes, $shortcode );
