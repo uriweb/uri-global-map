@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: URI Global Map
- * Plugin URI: http://www.uri.edu
+ * Plugin URI: https://www.uri.edu
  * Description: A Mapbox global map
  * Version: 0.1.0
  * Author: URI Web Communications
@@ -20,24 +20,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Include css and js
  */
-// function uri_plugin_template_enqueues() {
+function uri_global_map_enqueues() {
 
-	// wp_register_style( 'uri-global-map-css', plugins_url( '/css/style.built.css', __FILE__ ) );
-	// wp_enqueue_style( 'uri-global-map-css' );
+	wp_register_style( 'uri-global-map-css', plugins_url( '/css/style.built.css', __FILE__ ) );
+	wp_enqueue_style( 'uri-global-map-css' );
 
-	// wp_register_script( 'uri-global-map-js', plugins_url( '/js/script.built.js', __FILE__ ) );
-	// wp_enqueue_script( 'uri-global-map-js' );
+	wp_register_script( 'uri-global-map-js', plugins_url( '/js/script.built.js', __FILE__ ) );
+	wp_enqueue_script( 'uri-global-map-js' );
 
-// }
-// add_action( 'wp_enqueue_scripts', 'uri_global_map_enqueues' );
-
-// Include shortcodes
-// include( URI_GLOBAL_MAP_DIR_PATH . 'inc/uri-global-map-shortcodes.php' );
+}
+add_action( 'wp_enqueue_scripts', 'uri_global_map_enqueues' );
 
 
+/**  Default attributes */
 function uri_global_map_shortcode( $attributes ) {
 
-	// default attributes
 	$attributes = shortcode_atts(
 		 array(
 			 'spreadsheet' => '',
@@ -49,13 +46,15 @@ function uri_global_map_shortcode( $attributes ) {
 		$shortcode
 		);
 
+		wp_localize_script( 'uri-global-map', 'attributes', $attributes );
+
 	echo '
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
 <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
-<link href="' . plugins_url() . '/uri-global-map/css/style.built.css" rel="stylesheet" />
+
 
 
 <div class="container">
@@ -69,8 +68,6 @@ function uri_global_map_shortcode( $attributes ) {
   </div>
 </div>
 </div>
-<script src="' . plugins_url() . '/uri-global-map/js/script.built.js"></script>
-
 
 ';
 
