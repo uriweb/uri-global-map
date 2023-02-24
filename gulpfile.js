@@ -46,7 +46,7 @@ function scripts(done) {
 
 	// Run ESLint for src js
     gulp.src('./src/js/*.js')
-        .pipe(eslint(done))
+        .pipe(eslint({fix:true}))
         .pipe(eslint.format());
 
 	// Compile src js

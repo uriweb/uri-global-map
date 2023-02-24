@@ -18,7 +18,7 @@ var transformRequest = (url, resourceType) => {
 };
 //YOUR TURN: add your Mapbox token
 
-mapboxgl.accessToken = ''. $attributes["token"] .''; //Mapbox token 
+mapboxgl.accessToken = '' + $attributes["token"] + ''; //Mapbox token 
 var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/mapbox/satellite-v9', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
@@ -143,7 +143,7 @@ $(document).ready(function () {
   $.ajax({
     type: "GET",
     //YOUR TURN: Replace with csv export link
-    url: 'https://docs.google.com/spreadsheets/d/' .$attributes["attributes"]. '/gviz/tq?tqx=out:csv&sheet=Sheet1',
+    url: 'https://docs.google.com/spreadsheets/d/' + $attributes["attributes"] + '/gviz/tq?tqx=out:csv&sheet=Sheet1',
     dataType: "text",
     success: function (csvData) { makeGeoJSON(csvData); }
   });
