@@ -17,6 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
+
+define( 'URI_GLOBAL_MAP_PATH', plugin_dir_path( __FILE__ ) );
+define( 'URI_GLOBAL_MAP_URL', str_replace( '/assets', '/', plugins_url( 'assets', __FILE__ ) ) );
+
+// set up the admin settings screen
+include_once( URI_GLOBAL_MAP_PATH . 'uri-global-map-settings.php' );
+
 /**
  * Include css and js
  */
@@ -27,6 +34,8 @@ function uri_global_map_enqueues() {
 
 	wp_register_script( 'uri-global-map-js', plugins_url( '/js/script.built.js', __FILE__ ) );
 	wp_enqueue_script( 'uri-global-map-js' );
+
+	wp_localize_script( 'uri-global-map', 'attributes', $attributes );
 
 }
 add_action( 'wp_enqueue_scripts', 'uri_global_map_enqueues' );
@@ -45,8 +54,6 @@ function uri_global_map_shortcode( $attributes ) {
 		$attributes,
 		$shortcode
 		);
-
-		wp_localize_script( 'uri-global-map', 'attributes', $attributes );
 
 	echo '
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
