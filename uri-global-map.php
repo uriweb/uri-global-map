@@ -35,7 +35,22 @@ function uri_global_map_enqueues() {
 	wp_register_script( 'uri-global-map-js', plugins_url( '/js/script.built.js', __FILE__ ) );
 	wp_enqueue_script( 'uri-global-map-js' );
 
-	wp_localize_script( 'uri-global-map', 'attributes', $attributes );
+	$spreadsheet = get_option( 'uri_global_map_spreadsheet' );
+	$token = get_option( 'uri_global_map_token' );
+	wp_localize_script(
+		 'uri-global-map-js',
+		'spreadsheet',
+		array(
+			'text' => $spreadsheet,
+		)
+		);
+		wp_localize_script(
+			'uri-global-map-js',
+		   'token',
+		   array(
+			   'text' => $token,
+		   )
+		   );
 
 }
 add_action( 'wp_enqueue_scripts', 'uri_global_map_enqueues' );
@@ -46,8 +61,6 @@ function uri_global_map_shortcode( $attributes ) {
 
 	$attributes = shortcode_atts(
 		 array(
-			 'spreadsheet' => '',
-			 'token' => '',
 			 'width' => '',
 			 'height' => '',
 		 ),

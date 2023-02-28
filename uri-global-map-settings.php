@@ -9,7 +9,6 @@
 /**
  * Register settings
  */
-
 function uri_global_map_register_settings() {
 
 	register_setting(
@@ -59,7 +58,6 @@ function uri_global_map_register_settings() {
 }
  add_action( 'admin_init', 'uri_global_map_register_settings' );
 
-
 /**
  * Callback for a settings section
  *
@@ -89,8 +87,8 @@ add_action( 'admin_menu', 'uri_global_map_settings_page' );
 
 
 /**
- * callback to render the HTML of the settings page.
- * renders the HTML on the settings page
+ * Callback to render the HTML of the settings page.
+ * Renders the HTML on the settings page
  */
 function uri_global_map_settings_page_html() {
 	// check user capabilities
