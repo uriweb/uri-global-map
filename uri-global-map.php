@@ -32,7 +32,7 @@ function uri_global_map_enqueues() {
 	wp_register_style( 'uri-global-map-css', plugins_url( '/css/style.built.css', __FILE__ ) );
 	wp_enqueue_style( 'uri-global-map-css' );
 
-	wp_register_script( 'uri-global-map-js', plugins_url( '/js/script.built.js', __FILE__ ) );
+	wp_register_script( 'uri-global-map-js', plugins_url( '/js/script.built.js', __FILE__ ), array( 'jquery' ) );
 	wp_enqueue_script( 'uri-global-map-js' );
 
 	$spreadsheet = get_option( 'uri_global_map_spreadsheet' );
@@ -52,6 +52,15 @@ function uri_global_map_enqueues() {
 		   )
 		   );
 
+		   wp_register_script( 'csv2geojson-js', plugins_url( '/inc/csv2geojson.js', __FILE__ ) );
+		   wp_enqueue_script( 'csv2geojson-js' );
+
+		   wp_register_script( 'mapbox-gl-js', plugins_url( '/inc/mapbox-gl.js', __FILE__ ) );
+		   wp_enqueue_script( 'mapbox-gl-js' );
+
+		   wp_register_style( 'mapbox-gl-css', plugins_url( '/inc/mapbox-gl.css', __FILE__ ) );
+		   wp_enqueue_style( 'mapbox-gl-css' );
+
 }
 add_action( 'wp_enqueue_scripts', 'uri_global_map_enqueues' );
 
@@ -69,12 +78,7 @@ function uri_global_map_shortcode( $attributes ) {
 		);
 
 	echo '
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-<script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
-<script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 
 
 <div class="container">
