@@ -21,8 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'URI_GLOBAL_MAP_PATH', plugin_dir_path( __FILE__ ) );
 define( 'URI_GLOBAL_MAP_URL', str_replace( '/assets', '/', plugins_url( 'assets', __FILE__ ) ) );
 
-// set up the admin settings screen
+// Include the admin settings screen
 include_once( URI_GLOBAL_MAP_PATH . 'uri-global-map-settings.php' );
+
+// Include map
+//include_once( URI_GLOBAL_MAP_PATH . 'inc/display-map.php' );
 
 /**
  * Include css and js
@@ -78,22 +81,9 @@ function uri_global_map_shortcode( $attributes ) {
 		);
 
 	echo '
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-
-
-<div class="container">
-<div id="map">
-<button id="btn-spin">Pause rotation</button>
-<div id="menu">
-    <input id="globe" type="radio" name="rtoggle" value="globe" checked="checked">
-    <label for="globe">Globe</label>
-    <input id="flat" type="radio" name="rtoggle" value="mercator">
-    <label for="flat">Flat Map</label>
-  </div>
-</div>
-</div>
-
-';
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>';
+	ob_start();
+		include 'inc/display-map.php';
+		ob_end_flush();
 }
 	add_shortcode( 'uri-global-map', 'uri_global_map_shortcode' );
