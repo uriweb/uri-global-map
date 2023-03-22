@@ -8,7 +8,7 @@
 
 
 <div class="mapcontainer">
-<div id="map">
+<div id="map"></div>
 <button id="btn-spin">Pause</button>
 <div id="menu">
 	<input id="globe" type="radio" name="rtoggle" value="globe" checked="checked">
@@ -16,7 +16,6 @@
 	<input id="flat" type="radio" name="rtoggle" value="mercator">
 	<label for="flat">Flat Map</label>
   </div>
-</div>
 </div>
 
 
