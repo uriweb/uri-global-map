@@ -9,7 +9,7 @@
 
 <div class="mapcontainer">
 <div id="map">
-<button id="btn-spin">Pause rotation</button>
+<button id="btn-spin">Pause</button>
 <div id="menu">
 	<input id="globe" type="radio" name="rtoggle" value="globe" checked="checked">
 	<label for="globe">Globe</label>
