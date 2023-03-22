@@ -25,7 +25,7 @@ define( 'URI_GLOBAL_MAP_URL', str_replace( '/assets', '/', plugins_url( 'assets'
 include_once( URI_GLOBAL_MAP_PATH . 'uri-global-map-settings.php' );
 
 // Include map
-//include_once( URI_GLOBAL_MAP_PATH . 'inc/display-map.php' );
+// include_once( URI_GLOBAL_MAP_PATH . 'inc/display-map.php' );
 
 /**
  * Include css and js
