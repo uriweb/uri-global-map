@@ -80,8 +80,6 @@ function uri_global_map_shortcode( $attributes ) {
 		$shortcode
 		);
 
-	echo '
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>';
 	ob_start();
 		include 'inc/display-map.php';
 		ob_end_flush();
