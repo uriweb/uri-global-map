@@ -37,6 +37,10 @@
 			projection: 'globe',
 		} );
 
+		if ( $( window ).width() < 750 ) {
+			map.setProjection( 'mercator' );
+		}
+
 		//Add full screen control
 		// eslint-disable-next-line no-undef
 		map.addControl( new mapboxgl.FullscreenControl() );
@@ -124,7 +128,7 @@
 		}
 
 		//Map View Radio buttons
-		const viewList = document.getElementById( 'menu' );
+		const viewList = document.getElementById( 'globemenu' );
 		const inputs = viewList.getElementsByTagName( 'input' );
 
 		for ( const input of inputs ) {
