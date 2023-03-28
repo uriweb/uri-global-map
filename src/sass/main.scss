@@ -28,7 +28,7 @@ position: relative;
 width: 90vw !important;
 margin-left: -50vw !important;
 left: 60% !important;
-overflow: auto;
+overflow: hidden;
 padding-top: 100%;
 margin: 0;
 }
@@ -44,6 +44,7 @@ margin: 0;
   font: 400 15px/20px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
   padding: 10px 10px 0px 10px;
   width: 450px;
+  height: 375px;
   background:rgba(59, 67, 79, 0.75) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   backdrop-filter: blur(20px);
@@ -154,8 +155,9 @@ background-color: #002147;
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#menu {
+#globemenu {
     position: absolute;
+    top: 0px;
     z-index: 1;
     background: #233a59;
     padding: 10px;
@@ -174,7 +176,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 14px;
     padding: 5px 2px 5px 2px;
   }
-  #menu {
+  #globemenu {
     font-size: 14px;
     padding: 5px;
     }
@@ -197,7 +199,6 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .thumbnailpic img {
     margin: 0px;
-    align: center;
 }
 
 .boxlist ul { 
@@ -212,7 +213,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 display: none;
 }
 
-#menu {
+#globemenu {
 display: none;
 }
 
