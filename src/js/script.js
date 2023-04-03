@@ -37,9 +37,15 @@
 			projection: 'globe',
 		} );
 
-		if ( $( window ).width() < 750 ) {
-			map.setProjection( 'mercator' );
+		//Set mercator map on mobile
+		function flatMapMobile() {
+			if ( $( window ).width() < 750 ) {
+				map.setProjection( 'mercator' );
+				map.setZoom( 1 );
+			}
 		}
+
+		window.addEventListener( 'resize', flatMapMobile );
 
 		//Add full screen control
 		// eslint-disable-next-line no-undef
@@ -51,7 +57,7 @@
 		} );
 
 		//spin on larger screen sizes
-		if ( $(window).width() > 750) {
+		if ( $( window ).width() > 750 ) {
 		// The following values can be changed to control rotation speed:
 
 			// At low zooms, complete a revolution every two minutes.
@@ -218,7 +224,7 @@
 						map.fitBounds( bbox, { padding: 50 } );
 					} );
 				} );
-			};
+			}
 		} );
 	}
 }() );
