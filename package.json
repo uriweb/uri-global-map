@@ -16,8 +16,8 @@
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
-    "@wordpress/eslint-plugin": "^14.0.0",
-    "autoprefixer": "^10.4.13",
+    "@wordpress/eslint-plugin": "^14.11.0",
+    "autoprefixer": "^10.4.14",
     "gulp": "^4.0.2",
     "gulp-concat": ">=2.6.1",
     "gulp-eslint": "^6.0.0",
@@ -29,7 +29,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-strip-debug": "^5.0.0",
     "gulp-terser": "^2.1.0",
-    "sass": "^1.58.3"
+    "sass": "^1.64.2"
   },
   "browserslist": {
     "production": [
