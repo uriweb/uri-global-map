@@ -2,7 +2,7 @@
 /**
  * Create admin settings menu for the Global Map Plugin
  *
- * @package uri-kuali
+ * @package uri-global-map
  */
 
 
@@ -133,9 +133,9 @@ function uri_global_map_spreadsheet_field( $args ) {
 		<input type="text" class="regular-text" aria-describedby="uri-global-map-field-spreadsheet" name="uri_global_map_spreadsheet" id="uri-global-map-field-spreadsheet" value="<?php print ( $setting !== false ) ? esc_attr( $setting ) : ''; ?>">
 		<p class="uri-global-map-field-spreadsheet">
 			<?php
-				esc_html_e( 'Provide the ID for the spreadsheet.', 'uri' );
+				esc_html_e( 'Provide the URL for the spreadsheet.', 'uri' );
 				echo '<br />';
-				esc_html_e( 'For example: After "https://docs.google.com/spreadsheets/d/" and before "/edit#gid=0"', 'uri' );
+				esc_html_e( 'For example: https://docs.google.com/spreadsheets/d/[spreadsheetID]/gviz/tq?tqx=out:csv&sheet=Sheet1', 'uri' );
 			?>
 		</p>
 	<?php
