@@ -77,7 +77,6 @@ function uri_global_map_shortcode( $attributes ) {
 			 'height' => '',
 		 ),
 		$attributes,
-		$shortcode
 		);
 
 	ob_start();
