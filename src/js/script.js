@@ -73,7 +73,7 @@
 			function spinGlobe() {
 				const zoom = map.getZoom();
 				if ( spinEnabled && ! userInteracting && zoom < maxSpinZoom ) {
-					let distancePerSecond = 200 / secondsPerRevolution;
+					let distancePerSecond = 100 / secondsPerRevolution;
 					if ( zoom > slowSpinZoom ) {
 					// Slow spinning at higher zooms
 						const zoomDif =
